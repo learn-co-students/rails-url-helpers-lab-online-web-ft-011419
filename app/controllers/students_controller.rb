@@ -10,6 +10,9 @@ class StudentsController < ApplicationController
   end
 
   def activate_student_path
-    @student.active = 
+    @student.find(params[:id])
+    @student.active = !@student.active
+    @student.save
+    @student 
 
 end
