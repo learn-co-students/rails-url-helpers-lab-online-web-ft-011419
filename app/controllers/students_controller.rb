@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  
+
 
   def index
     @students = Student.all
@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  def set_student
+  def activate
     @student = Student.find(params[:id])
     @student.active = !@student.active
     @student.save
