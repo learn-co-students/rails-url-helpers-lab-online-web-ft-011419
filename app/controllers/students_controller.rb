@@ -7,9 +7,12 @@ class StudentsController < ApplicationController
 
   def show
   end
-  def actvie
+  def active
     @student = Student.find(params[:id])
-  render 'views/students/show.html.erb'
+    @student.active = !@student.active 
+    @student.save
+    redirect_to student_path(@student)
+  
   end
 
   private
